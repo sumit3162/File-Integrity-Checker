@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Integrity Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 4px;
+        }
+        .modified {
+            color: red;
+        }
+        .new {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Integrity Checker</h1>
+        <div>
+            <label for="directory">Directory Path:</label>
+            <input type="text" id="directory" placeholder="e.g., /etc" value="./test_files">
+            <button onclick="scanFiles()">Scan Files</button>
+            <button onclick="checkIntegrity()">Check Integrity</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        async function scanFiles() {
+            const directory = document.getElementById('directory').value;
+            const response = await fetch('http://localhost:5000/scan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ directory })
+            });
+            const data = await response.json();
+            document.getElementById('results').innerHTML = `<p>${data.message} (${data.files_scanned} files)</p>`;
+        }
+
+        async function checkIntegrity() {
+            const directory = document.getElementById('directory').value;
+            const response = await fetch('http://localhost:5000/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ directory })
+            });
+            const data = await response.json();
+            let resultsHTML = '<h3>Scan Results:</h3>';
+            
+            if (data.modified_files.length === 0) {
+                resultsHTML += '<p>No changes detected. All files are intact.</p>';
+            } else {
+                resultsHTML += '<ul>';
+                data.modified_files.forEach(file => {
+                    const statusClass = file.status.toLowerCase();
+                    resultsHTML += `<li class="${statusClass}">${file.file} - <strong>${file.status}</strong></li>`;
+                });
+                resultsHTML += '</ul>';
+            }
+            document.getElementById('results').innerHTML = resultsHTML;
+        }
+    </script>
+</body>
+</html>
