@@ -1,3 +1,4 @@
+File Integrity Checker 
 This project is a File Integrity Checker that monitors files for unauthorized changes using cryptographic hashing (SHA-256). It consists of a Python Flask backend and a web-based frontend.
 
 📌 Features
@@ -16,7 +17,7 @@ Web browser (Chrome/Firefox)
 
 2. Clone the Repository
 sh
-git clone https://github.com/your-repo/file-integrity-checker.git
+git clone [https://github.com/your-repo/file-integrity-checker.git](https://github.com/sumit3162/File-Integrity-Checker)
 cd file-integrity-checker
 3. Run the Backend (Flask Server)
 sh
