@@ -1,64 +1,109 @@
-File Integrity Checker 
-This project is a File Integrity Checker that monitors files for unauthorized changes using cryptographic hashing (SHA-256). It consists of a Python Flask backend and a web-based frontend.
 
-📌 Features
-✅ Scan Files - Record file hashes for later comparison.
-✅ Detect Changes - Check if files have been modified, deleted, or added.
-✅ Simple Web Interface - Easy-to-use dashboard for scanning and checking.
-✅ Real-time Alerts - Highlights modified/new files.
 
-⚙️ Setup & Installation
-1. Prerequisites
-Python 3.6+
+---
 
-Flask (pip install flask)
+````markdown
+# 🛡️ File Integrity Checker
 
-Web browser (Chrome/Firefox)
+![Python](https://img.shields.io/badge/Built%20with-Python%203-blue)
+![Flask](https://img.shields.io/badge/Framework-Flask-lightblue)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![UI](https://img.shields.io/badge/UI-HTML%2FCSS-orange)
 
-2. Clone the Repository
-sh
-git clone [https://github.com/your-repo/file-integrity-checker.git](https://github.com/sumit3162/File-Integrity-Checker)
+A lightweight web-based tool to scan directories and monitor file integrity using hash comparisons. Useful for detecting unauthorized file changes and maintaining system security.
+
+## 🖼️ Project Preview
+
+<img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/demo.png" alt="App Screenshot" width="700"/>
+
+> Replace `yourusername/yourrepo` with your actual GitHub repo path and upload a screenshot named `demo.png`.
+
+---
+
+## 🔧 Features
+
+- ✅ Scan a directory and store file hashes (SHA-256)
+- ✅ Detect modified or newly added files
+- ✅ Simple, responsive web interface
+- ✅ Fast, real-time responses via Flask backend
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/file-integrity-checker.git
 cd file-integrity-checker
-3. Run the Backend (Flask Server)
-sh
+````
+
+### 2. Install Dependencies
+
+```bash
+pip install flask
+```
+
+### 3. Run the Application
+
+```bash
 python integrity_checker.py
-Note: The server runs at http://localhost:5000.
+```
 
-4. Open the Frontend
-Open index.html in a browser (or use a local HTTP server like python -m http.server 8000).
+The app will start at `http://localhost:5000`.
 
-🖥️ Usage
-1. Scan a Directory
-Enter a directory path (e.g., ./test_files).
+### 4. Open `index.html`
 
-Click "Scan Files" to generate baseline hashes.
+You can open `index.html` directly in a browser or serve it with a simple HTTP server.
 
-2. Check for Changes
-Click "Check Integrity" to compare current files with the baseline.
+---
 
-Modified files appear in red, new files in blue.
+## 📁 Project Structure
 
-📂 Example Directory Structure
-project/
-│── integrity_checker.py (Backend)
-│── index.html (Frontend)
-└── test_files/ (Sample files to monitor)
-    ├── file1.txt
-    ├── file2.log
-    └── config.json
-🔧 Possible Improvements
-Database Storage: Use SQLite/PostgreSQL instead of in-memory storage.
+```
+├── index.html              # Frontend interface
+├── integrity_checker.py    # Flask backend with hashing logic
+└── README.md               # You're reading it!
+```
 
-Scheduled Scans: Automate checks with cron or Celery.
+---
 
-Email Alerts: Send notifications when changes are detected.
+## 📸 Screenshots
 
-User Authentication: Secure access with login.
+| 📂 Scan Files                                                                  | 🔍 Check Integrity                                                               |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| ![Scan](https://raw.githubusercontent.com/yourusername/yourrepo/main/scan.png) | ![Check](https://raw.githubusercontent.com/yourusername/yourrepo/main/check.png) |
 
-⚠️ Security Notes
-Do not expose the Flask server publicly (use only in trusted networks).
+---
 
-Store hashes securely (encrypt if sensitive).
+## ⚠️ Notes
 
-📜 License
-MIT License - Free for personal and commercial use.
+* This version stores hashes **in memory** (non-persistent). Restarting the server resets the scanned data.
+* To make it production-ready, integrate a **database** like SQLite or MongoDB to persist hashes.
+
+---
+
+## 💡 Future Enhancements
+
+* Add email notifications on modification
+* Persistent database support
+* User authentication
+* Command-line interface (CLI)
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! If you have suggestions or find bugs, please open an issue.
+
+---
+
+## 📜 License
+
+MIT License © 2025 Sumit Shingane
+
+---
+
+```
+
+
