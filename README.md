@@ -1,21 +1,11 @@
-
+Here is the updated, **clean and image-free** version of the `README.md` for your **File Integrity Checker** project:
 
 ---
 
 ````markdown
 # 🛡️ File Integrity Checker
 
-![Python](https://img.shields.io/badge/Built%20with-Python%203-blue)
-![Flask](https://img.shields.io/badge/Framework-Flask-lightblue)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![UI](https://img.shields.io/badge/UI-HTML%2FCSS-orange)
-
 A lightweight web-based tool to scan directories and monitor file integrity using hash comparisons. Useful for detecting unauthorized file changes and maintaining system security.
-
-## 🖼️ Project Preview
-
-<img src="https://github.com/sumit3162/File-Integrity-Checker/blob/main/Screenshot%202025-06-04%20211936.png" alt="App Screenshot" width="700"/>
-
 
 ---
 
@@ -67,14 +57,6 @@ You can open `index.html` directly in a browser or serve it with a simple HTTP s
 
 ---
 
-## 📸 Screenshots
-
-| 📂 Scan Files                                                                  | 🔍 Check Integrity                                                               |
-| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| ![Scan](https://raw.githubusercontent.com/yourusername/yourrepo/main/scan.png) | ![Check](https://raw.githubusercontent.com/yourusername/yourrepo/main/check.png) |
-
----
-
 ## ⚠️ Notes
 
 * This version stores hashes **in memory** (non-persistent). Restarting the server resets the scanned data.
@@ -100,9 +82,4 @@ Pull requests are welcome! If you have suggestions or find bugs, please open an 
 ## 📜 License
 
 MIT License © 2025 Sumit Shingane
-
----
-
-```
-
 
