@@ -14,9 +14,8 @@ A lightweight web-based tool to scan directories and monitor file integrity usin
 
 ## 🖼️ Project Preview
 
-<img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/demo.png" alt="App Screenshot" width="700"/>
+<img src="https://github.com/sumit3162/File-Integrity-Checker/blob/main/Screenshot%202025-06-04%20211936.png" alt="App Screenshot" width="700"/>
 
-> Replace `yourusername/yourrepo` with your actual GitHub repo path and upload a screenshot named `demo.png`.
 
 ---
 
